@@ -6,7 +6,6 @@
       <field name="format">custom</field>
       <field name="page_height">210</field>
       <field name="page_width">297</field>
-      <!-- <field name="orientation">portrait</field> -->
       <field name="margin_top">5</field>
       <field name="margin_bottom">0</field>
       <field name="margin_left">7</field>
@@ -79,9 +78,9 @@
              }
             </style>
                 <div class="page" style="border: 2px solid black; width: 100%; padding: -20px; height: auto; margin-top:30px;">
-                 <table class="MyTable entete">
+                <table class="MyTable entete">
                   <tr>
-                    <td><img t-if="o.company_id.logo" t-att-src="image_data_uri(o.company_id.logo)" width="200" alt="Logo"/>
+                    <td><img t-if="o.company_id.logo" t-att-src="image_data_uri(o.company_id.logo)" height="120" alt="Logo"/>
                     </td>
                     <td><h3 style="color : rgb(31,62,124);">BULLETIN DE PAIE</h3>
                     <p><span  class="company" t-esc="o.company_id.name"/><br/>
@@ -165,7 +164,7 @@
                   <!-- fin -->
                 <t t-set="total_autre_retenue" t-value="0"/>
                 <p>Periode de <span t-field="o.date_from"/> au <span t-field="o.date_to"/> </p>
-                <div style="border: 0px solid black; width: 100%; margin:auto; padding: 0px; height: 750px; margin-top: 5px;" class="row">
+                <div style="border: 0px solid black; width: 100%; margin:auto; padding: 0px; height: 720px; margin-top: 5px;" class="row">
               <table class="MyTable">
                 <thead class="table-active" style="border:1px solid black;">
                   <tr>
@@ -304,7 +303,7 @@
                     <t t-set="salaire_net" t-value="salaire_net + line.total"/>
                   </t>
                 </t>
-              <div style="border: 0px solid black; width: 100%; margin:auto; height: 100px; margin-top: 45px;" class="row">
+              <!-- <div style="border: 0px solid black; width: 100%; margin:auto; height: 100px; margin-top: 45px;" class="row"> -->
                 <table class="MyTable">
                   <tr class="table-active">
                     <th>Cumul</th><th>Salaire brut</th><th>Charges salariales</th><th>Charges patronales</th><th>Avantage en nature</th><th>Heures travaillées</th><th>Heures suplémentaires</th><th bgcolor="#d3d3d3">Net à payer</th>
@@ -323,7 +322,7 @@
                   </tr>
                 </table>
               </div>
-              </div>
+              <!-- </div> -->
               <br/>
              <p> <i>Pour vous aider à faire valoir vos droits, concervez ce bulletin de paie sans limitation de durée</i></p>
             </t>

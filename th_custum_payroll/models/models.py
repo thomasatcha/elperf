@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from odoo import models, api, _, fields
-from odoo.exceptions import ValidationError
+from odoo.exceptions import UserError, ValidationError
 from math import *
 from datetime import *
 import datetime
@@ -170,6 +170,20 @@ class HrPayslip(models.Model):
 
     _inherit = 'hr.payslip'
     anciennete = fields.Float(string="Ancienneté")
+    net_wage = fields.Float(string="Salaire net", compute="get_salaire_net")
+
+    def compute_sheet(self):
+        result = super().compute_sheet()
+        self.get_salaire_net()
+        return result
+
+    def get_salaire_net(self):
+        for rec in self:
+            total = 0
+            for line in self.line_ids:
+                if line.code == "2000":
+                    total += line.total
+            self.net_wage = total
 
     @api.onchange('contract_id')
     def calcule_anciennete(self):
