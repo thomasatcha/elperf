@@ -322,6 +322,18 @@ result = irpp</field>
 			<field name="amount_python_compute">result = contract.prime_panier</field>
 		</record>
 
+		<record  id="prime_salisure" model="hr.salary.rule">
+			<field name="name">Prime de salissure</field>
+			<field name="code">545</field>
+			<field name="category_id" ref="autre_retenu" />
+			<field name="sequence">545</field>
+			<field name="struct_id" ref="togo_salary_structure_id"/>
+			<field name="active">TRUE</field>
+			<field name="appears_on_payslip">TRUE</field>
+			<field name="amount_select">code</field>
+			<field name="amount_python_compute">result = contract.prime_salisure</field>
+		</record>
+
 		<record  id="adjustement" model="hr.salary.rule">
 			<field name="name">Ajustement salaire net</field>
 			<field name="code">550</field>

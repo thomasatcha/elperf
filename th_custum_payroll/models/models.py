@@ -48,7 +48,7 @@ class hrContactInherit(models.Model):
 	    default=0,
 	)
     prime_risque = fields.Float(
-	    string='Prime de rique',
+	    string='Prime de risque',
 	)
     prime_salisure = fields.Float(
 		string="Prime de salissure"
