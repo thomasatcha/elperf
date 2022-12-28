@@ -53,9 +53,11 @@ class hrContactInherit(models.Model):
     prime_salisure = fields.Float(
 		string="Prime de salissure"
 	)
+    prime_resultat = fields.Float(string="Prime de resultat")
     prime_speciale = fields.Float(
 	    string='Prime spéciale',
 	)
+    prime_fonction = fields.Float(string="Prime de fonction")
     prime_specialite = fields.Float(
 	    string='Prime de spécialité',
 	)

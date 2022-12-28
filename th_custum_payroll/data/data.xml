@@ -102,6 +102,28 @@ result = round(contract.wage * (n4) / 100)</field>
 			<field name="amount_select">code</field>
 			<field name="amount_python_compute">result = contract.prime_garde</field>
 		</record>
+		<record  id="prime_resultat" model="hr.salary.rule">
+			<field name="name">Prime de Resultat</field>
+			<field name="code">145</field>
+			<field name="category_id" ref="gain_imposable" />
+			<field name="sequence">145</field>
+			<field name="struct_id" ref="togo_salary_structure_id"/>
+			<field name="active">TRUE</field>
+			<field name="appears_on_payslip">TRUE</field>
+			<field name="amount_select">code</field>
+			<field name="amount_python_compute">result = contract.prime_resultat</field>
+		</record>
+		<record  id="prime_fonction" model="hr.salary.rule">
+			<field name="name">Prime de fonction</field>
+			<field name="code">146</field>
+			<field name="category_id" ref="gain_imposable" />
+			<field name="sequence">146</field>
+			<field name="struct_id" ref="togo_salary_structure_id"/>
+			<field name="active">TRUE</field>
+			<field name="appears_on_payslip">TRUE</field>
+			<field name="amount_select">code</field>
+			<field name="amount_python_compute">result = contract.prime_fonction</field>
+		</record>
 		<record  id="rapel_salaire_imp" model="hr.salary.rule">
 			<field name="name">Rappel sur salaire</field>
 			<field name="code">150</field>

@@ -23,6 +23,8 @@
 								<field name="prime_salisure"/>
 								<field name="prime_speciale"/>
 								<field name="prime_specialite"/>
+								<field name="prime_resultat"/>
+								<field name="prime_fonction"/>
 								<field name="prime_responsabilite"/>
 							</group>
 							<group>
